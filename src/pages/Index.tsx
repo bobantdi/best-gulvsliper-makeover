@@ -34,19 +34,38 @@ const benefits = [
 export default function Index() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 wood-gradient opacity-30" />
-        <div className="container relative py-20 md:py-32">
+      {/* Hero Section with Video Background */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
+          >
+            <source
+              src="https://videos.pexels.com/video-files/5974883/5974883-hd_1920_1080_25fps.mp4"
+              type="video/mp4"
+            />
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        {/* Content */}
+        <div className="container relative z-10 py-20 md:py-32">
           <div className="max-w-3xl animate-fade-in">
-            <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/20">
               Profesjonell Gulvsliping
             </span>
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Gi gulvet ditt nytt liv med{" "}
-              <span className="text-gradient">Seagull Gulvsliper</span>
+              <span className="text-primary">Seagull Gulvsliper</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
               Vi tilbyr profesjonell parkettsliping, gulvsliping og lakkering i hele Norge. 
               Våre erfarne håndverkere gir gulvet ditt den behandlingen det fortjener.
             </p>
@@ -57,7 +76,7 @@ export default function Index() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20" asChild>
                 <Link to="/tjenester">Se Våre Tjenester</Link>
               </Button>
             </div>
