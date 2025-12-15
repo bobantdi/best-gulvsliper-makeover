@@ -43,13 +43,11 @@ export default function Index() {
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
             poster="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
           >
-            <source
-              src="https://videos.pexels.com/video-files/5974883/5974883-hd_1920_1080_25fps.mp4"
-              type="video/mp4"
-            />
+            <source src="/videos/helio-final.mp4" type="video/mp4" />
           </video>
           {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-black/50" />
@@ -63,7 +61,7 @@ export default function Index() {
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Gi gulvet ditt nytt liv med{" "}
-              <span className="text-primary">Seagull Gulvsliper</span>
+              <span className="text-primary">Seagull gulvsliper</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
               Vi tilbyr profesjonell parkettsliping, gulvsliping og lakkering i hele Norge. 

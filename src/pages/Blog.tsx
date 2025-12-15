@@ -5,24 +5,33 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight, User } from "lucide-react";
 
+import blogImage1 from "@/assets/blog-floor-sanding-1.jpg";
+import blogImage2 from "@/assets/blog-floor-sanding-2.jpg";
+
 const blogPosts = [
   {
     id: 1,
     title: "Hvordan Vedlikeholde Ditt Nyslipt Gulv",
-    excerpt: "Lær de beste tipsene for å holde gulvet ditt vakkert i mange år fremover. Fra daglig rengjøring til årlig vedlikehold.",
+    excerpt:
+      "Lær de beste tipsene for å holde gulvet ditt vakkert i mange år fremover. Fra daglig rengjøring til årlig vedlikehold.",
     category: "Vedlikehold",
     date: "15. desember 2024",
     readTime: "5 min",
     author: "Erik Hansen",
+    image: blogImage1,
+    imageAlt: "Vedlikehold av nyslipt tregulv",
   },
   {
     id: 2,
     title: "Lakk vs. Olje: Hva Er Best for Ditt Gulv?",
-    excerpt: "En grundig sammenligning av lakk og olje som overflatebehandling. Vi hjelper deg å velge riktig for ditt hjem.",
+    excerpt:
+      "En grundig sammenligning av lakk og olje som overflatebehandling. Vi hjelper deg å velge riktig for ditt hjem.",
     category: "Guider",
     date: "10. desember 2024",
     readTime: "8 min",
     author: "Maria Olsen",
+    image: blogImage2,
+    imageAlt: "Parkett og gulvbehandling med lakk eller olje",
   },
   {
     id: 3,
@@ -110,8 +119,18 @@ export default function Blog() {
                 className="group overflow-hidden hover:shadow-lg transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Image placeholder */}
-                <div className="aspect-[16/10] wood-gradient opacity-60 relative overflow-hidden">
+                {/* Image */}
+                <div className="aspect-[16/10] relative overflow-hidden">
+                  {post.image ? (
+                    <img
+                      src={post.image}
+                      alt={post.imageAlt ?? post.title}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 wood-gradient opacity-60" />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                   <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
                     {post.category}
