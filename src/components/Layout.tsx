@@ -37,14 +37,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       {/* Header */}
       <header className="bg-background border-b border-border sticky top-0 z-50">
         <div className="container flex items-center justify-between py-4">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-display font-bold text-xl">S</span>
             </div>
-            <div>
-              <span className="font-display text-xl font-bold text-foreground">Seagull</span>
-              <span className="block text-xs text-muted-foreground -mt-1">Gulvsliper</span>
-            </div>
+            <span className="font-display text-xl font-bold text-foreground">Seagull gulvsliper</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -112,12 +109,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="container py-12">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-full bg-primary-foreground flex items-center justify-center">
-                  <span className="text-wood-dark font-display font-bold text-xl">S</span>
-                </div>
-                <span className="font-display text-xl font-bold">Seagull Gulvsliper</span>
-              </div>
+               <div className="flex items-center gap-3 mb-4">
+                 <div className="w-10 h-10 rounded-full bg-primary-foreground flex items-center justify-center">
+                   <span className="text-wood-dark font-display font-bold text-xl">S</span>
+                 </div>
+                 <span className="font-display text-xl font-bold">Seagull gulvsliper</span>
+               </div>
               <p className="text-sm opacity-80">
                 Profesjonell gulvsliping og behandling av tregulv i hele Norge.
               </p>
